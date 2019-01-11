@@ -4,7 +4,7 @@ var pumpinPeter = function(top, left, timeBetweenSteps) {
   //this.$node.css("color", "green");
   // this.top = top;
   // this.left = left;
-  this.$node.css("color", "orange");
+  this.$node.css('color', 'orange');
 };
 
 pumpinPeter.prototype = Object.create(makeDancer.prototype);

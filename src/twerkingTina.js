@@ -4,7 +4,7 @@ var twerkingTina = function(top, left, timeBetweenSteps) {
   //this.$node.css("color", "green");
   // this.top = top;
   // this.left = left;
-  this.$node.css("color", "green");
+  this.$node.css('color', 'green');
 };
 
 twerkingTina.prototype = Object.create(makeDancer.prototype);

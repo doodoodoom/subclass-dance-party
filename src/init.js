@@ -25,6 +25,8 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+    console.log(window.dancers);
   });
 
   $('.addTinaButton').on('click', function(event) {
@@ -39,6 +41,8 @@ $(document).ready(function() {
     );
     //tinaDancer.$node.css("color", "green");
     $('body').append(tinaDancer.$node);
+    window.dancers.push(tinaDancer);
+    console.log(window.dancers);
   });
 
   $('.addPeterButton').on('click', function(event) {
@@ -53,6 +57,14 @@ $(document).ready(function() {
     );
     //peterDancer.$node.css("color", "green");
     $('body').append(peterDancer.$node);
+    window.dancers.push(peterDancer);
+    console.log(window.dancers);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i ++) {
+      window.dancers[i].lineUp();
+    }
   });
 });
 
