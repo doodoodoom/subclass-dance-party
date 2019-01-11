@@ -26,7 +26,7 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
-    console.log(window.dancers);
+    //console.log(window.dancers);
   });
 
   $('.addTinaButton').on('click', function(event) {
@@ -42,7 +42,7 @@ $(document).ready(function() {
     //tinaDancer.$node.css("color", "green");
     $('body').append(tinaDancer.$node);
     window.dancers.push(tinaDancer);
-    console.log(window.dancers);
+    //console.log(window.dancers);
   });
 
   $('.addPeterButton').on('click', function(event) {
@@ -58,13 +58,39 @@ $(document).ready(function() {
     //peterDancer.$node.css("color", "green");
     $('body').append(peterDancer.$node);
     window.dancers.push(peterDancer);
-    console.log(window.dancers);
+    //console.log(window.dancers);
   });
 
   $('.lineUpButton').on('click', function(event) {
     for (var i = 0; i < window.dancers.length; i ++) {
       window.dancers[i].lineUp();
     }
+  });
+
+  $('.relationsButton').on('click', function(event) {
+
+    //var relations = function(array) {
+    var distanceArr = [];
+    for (var x = 0; x < window.dancers.length; x ++) {
+      var dot1 = window.dancers[x];
+      var distance = 0;
+      //var distanceArr = [];
+      for (var y = 0; y < window.dancers.length; y ++) {
+        var dot2 = window.dancers[y];
+        if (dot1.top !== dot2.top || dot1.left !== dot2.left) {
+          //round distances to whole integer
+          distance = Math.sqrt(Math.pow((dot1.top - dot2.top), 2) + Math.pow((dot1.left - dot2.left), 2));
+          distanceArr.push(distance);
+          
+          //return distance;
+          //console.log('minDist is ' + minDist);
+        }
+      }
+    }
+    // sort distanceArr, so that first value is definitely min dist
+    // iterate through window.dancers array again, running pyth theorem
+    // when same min dist is found again, can find dots again, assign to vars
+    // enact change on those dots
   });
 });
 

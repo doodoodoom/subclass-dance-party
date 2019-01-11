@@ -5,8 +5,8 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   //need $node
   this.$node = $('<span class="dancer"></span>');
   console.log(this.$node);
-  // this.top = top;
-  //this.left = left;
+  this.top = top;
+  this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.step();
   // console.log('makeDancer class was run up to timeBetween');
