@@ -14,6 +14,10 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   //console.log('makeDancer this.step was run');
   this.setPosition(top, left);
   
+  this.$node.on('mouseover', function() {
+    $(this).css('color', 'white');
+  });
+  
   // new Obj is returned when invoked with 'new'
 };
 
