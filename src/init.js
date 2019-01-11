@@ -40,5 +40,19 @@ $(document).ready(function() {
     //tinaDancer.$node.css("color", "green");
     $('body').append(tinaDancer.$node);
   });
+
+  $('.addPeterButton').on('click', function(event) {
+    var peterFunctionName = $(this).data('peter-function-name');
+    // get the maker function for the kind of dancer we're supposed to make
+    var peterMakerFunction = window[peterFunctionName];
+    // make a dancer with a random position
+    var peterDancer = new peterMakerFunction(
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
+      Math.random() * 1000
+    );
+    //peterDancer.$node.css("color", "green");
+    $('body').append(peterDancer.$node);
+  });
 });
 
