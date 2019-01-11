@@ -16,18 +16,29 @@ $(document).ready(function() {
      * to the stage.
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-
     // make a dancer with a random position
-
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+  });
+
+  $('.addTinaButton').on('click', function(event) {
+    var tinaFunctionName = $(this).data('tina-function-name');
+    // get the maker function for the kind of dancer we're supposed to make
+    var tinaMakerFunction = window[tinaFunctionName];
+    // make a dancer with a random position
+    var tinaDancer = new tinaMakerFunction(
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
+      Math.random() * 1000
+    );
+    //tinaDancer.$node.css("color", "green");
+    $('body').append(tinaDancer.$node);
   });
 });
 

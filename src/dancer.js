@@ -4,12 +4,11 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   //do not need to manually define dancer obj
   //need $node
   this.$node = $('<span class="dancer"></span>');
-  //this.top = top;
-  //this.left = left;
+  console.log(this.$node);
+  // this.top = top;
+  // this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.step();
-  this.top = top;
-  this.left = left;
   // console.log('makeDancer class was run up to timeBetween');
   //this.step(this.timeBetweenSteps);
   //console.log('makeDancer this.step was run');
@@ -20,16 +19,16 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
 makeDancer.prototype.step = function() {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
-  console.log("makeDancer.step has run");
+  // console.log('makeDancer.step has run');
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
   var styleSettings = {
     top: top,
-    left: left
+    left: left,
+    color: "blue"
   };
   this.$node.css(styleSettings);
-  console.log('makeDance.setPosition was run');
 };
 
 // makeDance(0 auto, auto, 1000)
